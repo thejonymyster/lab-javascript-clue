@@ -57,21 +57,21 @@ const suspectsArray = [
     color: "yellow"}];
 
 // Rooms Collection
-const roomsArray = [{name: Dining Room},
-    {name: Conservatory},
-    {name: Kitchen},
-    {name: Study},
-    {name: Library},
-    {name: Billiard Room},
-    {name: Lounge},
-    {name: Ballroom},
-    {name: Hall},
-    {name: Spa},
-    {name: Living Room},
-    {name: Observatory},
-    {name: Theater},
-    {name: Guest House},
-    {name: Patio}];
+const roomsArray = [{name: "Dining Room"},
+    {name: "Conservatory"},
+    {name: "Kitchen"},
+    {name: "Study"},
+    {name: "Library"},
+    {name: "Billiard Room"},
+    {name: "Lounge"},
+    {name: "Ballroom"},
+    {name: "Hall"},
+    {name: "Spa"},
+    {name: "Living Room"},
+    {name: "Observatory"},
+    {name: "Theater"},
+    {name: "Guest House"},
+    {name: "Patio"}];
 
 // Weapons Collection
 const weaponsArray = [{name: 'rope',
@@ -99,4 +99,16 @@ function selectRandom(arr){
     return arr[Math.floor(Math.random() * arr.length)]
 }
 
+function pickMystery(){
+    return {
+        suspect: selectRandom(suspectsArray),
+        weapon: selectRandom(weaponsArray),
+        room: selectRandom(roomsArray)
+    }
+}
+
 // ITERATION 3
+
+function revealMystery(obj){
+    return `${obj.suspect.firstName} ${obj.suspect.lastName} killed Mr. Boddy using the ${obj.weapon.name} in the ${obj.room.name}!`
+}
